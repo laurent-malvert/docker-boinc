@@ -1,8 +1,10 @@
-# BOINC Dockerfiles
+## Description
 
-This project provides {{Dockerfile}}s to build docker containers
-allowing you to run BOINC in an isolated environment on your machine
-or in a cluster, and to control it.
+Provides a `Dockerfile` to build a docker image allowing you to run a
+BOINC client in a container.
+
+For a dockerized `boinccmd` command to control this client, see the
+`docker-boinccmd` repository.
 
 ## Why?
 
@@ -20,54 +22,33 @@ or in a cluster, and to control it.
    the long run if it matures into something decent: volumes, data
    containers, links, compose, etc...
 
-## Build
+## Pull From DockerHub
 
-    docker -t boinc boinc
-    docker -t boinccmd boincmd
+    docker pull laurentmalvert/boinc
+
+## Build It Yourself
+
+    docker -t boinc .
 
 ## Usage
 
 ### Starting the `boinc` BOINC Client
 
     # start the boinc-client, allowing connections from any host
-    docker run                 \
-    	   --name boinc-client \
-	   -d                  \
-	   boinc/boinc --allow_remote_gui_rpc
+    docker run          \
+    	   --name boinc \
+	   -d           \
+	   laurentmalvert/boinc --allow_remote_gui_rpc
 
-### Controlling the BOINC Client with `boinccmd`
+### Remote Control
 
-Issue commands of the form:
+See the `boinccmd` tool.
 
-    docker run                              \
-    	   --rm                             \
-	   --link boinc-client:boinc-client \
-	   boinc/boinccmd                   \
-	       --host boinc-client          \
-	       [<BOINCCMD_ARGS>]
-
-#### Examples
-
-    # get current state
-    docker run                              \
-    	   --rm                             \
-	   --link boinc-client:boinc-client \
-	   boinc/boinccmd                   \
-	       --host boinc-client          \
-	       --get_state
-
-    # join account manager
-    docker run                              \
-    	   --rm                             \
-	   --link boinc-client:boinc-client \
-	   boinc/boinccmd                   \
-	       --host boinc-client          \
-               --join_acct_mgr <URL> <LOGIN> <PASS>
+See also the `docker-boinccmd` repo for a dockerized version of
+`boinccmd` and usage examples.
 
 ## Possible Improvements ?
 
  * Use volumes to grab startup config.
  * Use volumes to persist work data and config between execution.
  * Provide some preset startup scripts.
- * `boinccmd` image unnecessarily installs the whole of boinc, when it
-   only requires parts of it.
