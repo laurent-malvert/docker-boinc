@@ -36,9 +36,9 @@ For a dockerized `boinccmd` command to control this client, see the
 
     # start the boinc-client, allowing connections from any host
     docker run          \
-    	   --name boinc \
-	   -d           \
-	   laurentmalvert/boinc --allow_remote_gui_rpc
+           --name boinc \
+           -d           \
+           laurentmalvert/boinc --allow_remote_gui_rpc
 
 ### Remote Control
 
