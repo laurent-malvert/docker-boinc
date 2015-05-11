@@ -5,7 +5,7 @@ MAINTAINER Laurent Malvert <laurent.malvert@gmail.com>
 LABEL                                                                      \
     Vendor="Laurent Malvert"                                               \
     Description="A base container image for lightweight BOINC clients"     \
-    Version="wheezy_7.4.23"                                                \
+    Version="jessie_7.4.23"                                                \
     Boinc-Version="7.4.23"                                                 \
     Base-Version="debian:jessie"
 
