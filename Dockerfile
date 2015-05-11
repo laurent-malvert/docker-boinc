@@ -1,20 +1,19 @@
-FROM debian:wheezy
+FROM debian:jessie
 
 MAINTAINER Laurent Malvert <laurent.malvert@gmail.com>
 
 LABEL                                                                      \
     Vendor="Laurent Malvert"                                               \
     Description="A base container image for lightweight BOINC clients"     \
-    Version="wheezy_7.0.27"                                                \
-    Boinc-Version="7.0.27"                                                 \
-    Base-Version="debian:wheezy"
+    Version="wheezy_7.4.23"                                                \
+    Boinc-Version="7.4.23"                                                 \
+    Base-Version="debian:jessie"
 
 # -- BOINC ---------------------------------------------------------------
 
-RUN apt-get update &&                                    \
-    DEBIAN_FRONTEND=noninteractive apt-get -q install -y \
-                   boinc-client &&                       \
-    apt-get clean &&                                     \
+RUN apt-get update &&                           \
+    apt-get -q install -y boinc-client &&       \
+    apt-get clean &&                            \
     rm -rf /var/lib/apt/lists/*
 
 USER boinc
