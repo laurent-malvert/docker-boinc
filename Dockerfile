@@ -11,7 +11,7 @@ LABEL                                                                      \
 
 RUN apt-get update &&                                    \
     DEBIAN_FRONTEND=noninteractive apt-get -q install -y \
-		   boinc-client &&                       \
+                   boinc-client &&                       \
     apt-get clean &&                                     \
     rm -rf /var/lib/apt/lists/*
 

@@ -24,7 +24,7 @@ For a dockerized `boinccmd` command to control this client, see the
 
 ## Pull From DockerHub
 
-    docker pull laurentmalvert/boinc
+    docker pull laurentmalvert/docker-boinc
 
 ## Build It Yourself
 
@@ -38,11 +38,12 @@ For a dockerized `boinccmd` command to control this client, see the
     docker run          \
            --name boinc \
            -d           \
-           laurentmalvert/boinc --allow_remote_gui_rpc
+           laurentmalvert/docker-boinc --allow_remote_gui_rpc
 
 ### Remote Control
 
-See the `boinccmd` tool.
+You can control your BOINC client using the `boinccmd` command-line
+tool. See its [documentation][1] for usage details.
 
 See also the `docker-boinccmd` repo for a dockerized version of
 `boinccmd` and usage examples.
@@ -52,3 +53,8 @@ See also the `docker-boinccmd` repo for a dockerized version of
  * Use volumes to grab startup config.
  * Use volumes to persist work data and config between execution.
  * Provide some preset startup scripts.
+
+
+
+
+[1]: http://boinc.berkeley.edu/wiki/Boinccmd_tool
