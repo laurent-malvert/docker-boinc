@@ -56,7 +56,13 @@ To persist data add the `-v /path/to/host/directory:/var/lib/boinc-client` flag 
 
  * Provide some preset startup scripts.
 
+## Contributors
+
+ * [laurent-malvert][2]
+ * [rwky][3]
 
 
 
 [1]: http://boinc.berkeley.edu/wiki/Boinccmd_tool
+[2]: https://github.com/laurent-malvert
+[3]: https://github.com/rwky
