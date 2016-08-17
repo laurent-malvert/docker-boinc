@@ -48,10 +48,12 @@ tool. See its [documentation][1] for usage details.
 See also the `docker-boinccmd` repo for a dockerized version of
 `boinccmd` and usage examples.
 
+### Data persistence
+
+To persist data add the `-v /path/to/host/directory:/var/lib/boinc-client` flag to the `docker run` command
+
 ## Possible Improvements ?
 
- * Use volumes to grab startup config.
- * Use volumes to persist work data and config between execution.
  * Provide some preset startup scripts.
 
 
